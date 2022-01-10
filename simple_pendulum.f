@@ -1,8 +1,9 @@
 !     Calculate omega and theta using the
 !     Euler-Cromer method for solving diff equations.
       program simple_pendulum
+
       implicit none
-      integer, parameter :: n = 100
+      integer, parameter :: n = 500
       real, parameter :: g = 9.81
       real, parameter :: l = 1.0
       real, dimension(n) :: w, t
@@ -21,9 +22,12 @@
          theta(i+1) = theta(i) + w(i+1) * dt
          t(i+1) = t(i) + dt
       end do  
+
       open(1, file = "data.dat", status = "new")
       do i = 1, n
          write(1,*) t(i), theta(i)
       end do
       close(1) 
       end
+
+

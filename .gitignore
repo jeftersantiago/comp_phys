@@ -1,2 +1,7 @@
 *.dat
 *.out
+*.bbl
+*ltximg
+*tex
+*bib
+*_minted*
